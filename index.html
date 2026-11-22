@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b35">
+  <meta name="description" content="StudentAI — sua inteligência para estudar.">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <title>StudentAI</title>
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div class="brand-icon">✦</div>
+      <div><h1>StudentAI</h1><p>Educação para todos.</p></div>
+      <span class="free">GRATUITO</span>
+    </header>
+
+    <section class="welcome">
+      <span class="eyebrow">SEU ASSISTENTE DE ESTUDOS</span>
+      <h2>Olá! Vamos aprender algo novo?</h2>
+      <p>Faça uma pergunta ou envie uma foto da sua atividade.</p>
+    </section>
+
+    <section class="tools" aria-label="Ferramentas">
+      <button class="tool active" data-mode="Ajuda nos estudos"><span>📚</span><b>Estudar</b></button>
+      <button class="tool" data-mode="Conversar com IA"><span>💬</span><b>Conversar</b></button>
+      <button class="tool" data-mode="Criar textos"><span>✍️</span><b>Criar textos</b></button>
+      <button class="tool" data-mode="Traduzir idiomas"><span>🌎</span><b>Traduzir</b></button>
+      <button class="tool" data-mode="Gerar ideias"><span>💡</span><b>Ideias</b></button>
+      <button class="tool" data-mode="Criar imagens"><span>🎨</span><b>Ideias de imagem</b></button>
+    </section>
+
+    <section class="chat-card">
+      <div class="chat-heading"><div><span class="dot"></span><b>Assistente StudentAI</b></div><span id="modeLabel">Ajuda nos estudos</span></div>
+      <div id="messages" class="messages" aria-live="polite">
+        <article class="bubble assistant"><b>Oi! 👋</b><p>Sou o StudentAI. Envie sua dúvida ou uma foto. Vou mostrar primeiro a resposta direta e depois a explicação.</p></article>
+      </div>
+      <div id="previewWrap" class="preview-wrap" hidden>
+        <img id="preview" alt="Prévia da atividade enviada">
+        <button id="removeImage" class="remove" type="button" aria-label="Remover imagem">×</button>
+      </div>
+      <form id="askForm">
+        <textarea id="question" rows="2" placeholder="Digite sua pergunta..." aria-label="Sua pergunta"></textarea>
+        <div class="composer">
+          <label class="upload" for="photoInput">＋ Foto da atividade</label>
+          <input id="photoInput" type="file" accept="image/*" capture="environment" hidden>
+          <span class="spacer"></span>
+          <button id="send" class="send" type="submit">Enviar ↑</button>
+        </div>
+      </form>
+      <p class="privacy">Suas fotos são enviadas ao serviço de IA para responder e não são salvas por este protótipo.</p>
+    </section>
+
+    <footer>StudentAI · Protótipo em desenvolvimento · Confira respostas importantes com seu professor.</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
